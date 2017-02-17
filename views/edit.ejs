@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="centered">
+    <h3 class="text-center">Edit a video<h3>
+    <form action="/videos/<%=video._id%>?_method=put" method="POST">
+      <div class="form-group">
+        <!-- <label class="control-label"><small>Title</small></label> -->
+        <input class="form-control" type="text" name="video[title]" value="<%=video.title%>" placeholder="title">
+      </div>
+
+      <div class="form-group" role="button" data-trigger="focus" data-toggle="popover" data-html="true" title="Make sure to use correct URL!" data-content="In order to display the video correctly,<br>please use URL designed for embedding i.e.<br>https://www.youtube.com<strong>/embed/</strong>Ycit4OwYPNg">
+        <input class="form-control" type="text" name="video[video]" placeholder="video url" value="<%=video.video%>">
+      </div>
+
+      <div class="form-group">
+        <textarea id="txt" placeholder="description" class="form-control" name="video[desc]"><%=video.desc%></textarea>
+      </div>
+
+      <button class="btn btn-primary" id="sub">Submit</button>
+    </form>
+    <form method="POST" action="/videos/<%=video._id%>?_method=delete">
+      <button class="btn btn-danger" id="del">Delete</button>
+    </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$('[data-toggle="popover"]').popover({container: 'body'});
+</script>
+<% include partials/footer %>

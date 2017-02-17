@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<div class="container" id="main">
+<h1 class="text-center">Welcome to my VideoLog!</h1>
+<div class="row">
+  <div class="col-md-9">
+<% videos.forEach(function(video){ %>
+  <h3><%= video.title %></h3>
+  <iframe width="560" height="315" src="<%= video.video %>" frameborder="0" allowfullscreen></iframe>
+  <div><%=video.desc.substring(0,50)%>...</div><a href="/videos/<%=video._id%>">More</a>
+  <p><%=video.created.toDateString()%></p>
+  <hr>
+<% }); %>
+</div>
+<div class="col-md-3">
+  <!-- <div class="affix-top" data-offset-top="600" data-offset-bottom="200"> -->
+    <ul class="list-group">
+        <% videos.forEach(function(video){ %>
+          <a href="/videos/<%=video._id%>"><li class="list-group-item"><%= video.title %></li></a>
+        <% }); %>
+    </ul>
+  <!-- </div> -->
+</div>
+<!-- <script type="text/javascript">
+$('.list-group').affix({
+  offset: 15;
+});
+</script> -->
+<% include partials/footer %>

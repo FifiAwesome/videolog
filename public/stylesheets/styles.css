@@ -1,0 +1,54 @@
+.navbar {
+  border-radius: 0;
+}
+
+#title {
+  margin: 20px 0;
+}
+
+.centered {
+  /*text-align: center;*/
+  margin: 40px auto;
+  width: 45%;
+}
+
+#txt {
+  height: 200px;
+  max-width: 100%;
+}
+
+.popover {
+  max-width: 100%;
+}
+
+#main {
+  width: 60%;
+}
+
+ul {
+  margin-top: 40px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+iframe {
+  width: 100%
+}
+
+#del {
+  display: inline;
+  float: right;
+}
+
+#sub, #del {
+  width: 40%;
+}
+
+form {
+  display: inline;
+}

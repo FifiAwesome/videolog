@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="container-fluid">
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-3">
+    <h3 id="title" class="text-capitalize"><%=video.title%></h3>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Created
+      </div>
+      <div class="panel-body">
+        <%=video.created.toDateString()%>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Description
+      </div>
+      <div class="panel-body">
+        <%=video.desc%>
+      </div>
+    </div>
+    <a class="btn btn-warning btn-block" href="/videos/<%=video._id%>/edit">Edit</a>
+  </div>
+  <div class="col-sm-7">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560" height="315" src="<%= video.video %>" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<% include partials/footer %>
