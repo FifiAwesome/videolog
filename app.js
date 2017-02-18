@@ -6,7 +6,7 @@ var express = require('express'),
 
 
 // APP CONFIG
-mongoose.connect("mongodb://localhost:27017/videolog");
+mongoose.connect("mongodb://admin:Mammamia1@ds155509.mlab.com:55509/videolog");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -100,6 +100,6 @@ app.delete("/videos/:id", function(req, res){
   });
 });
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, function(){
   console.log("Server has started...");
 });
